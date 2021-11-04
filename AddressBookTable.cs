@@ -52,5 +52,23 @@ namespace AddressBookWithLinq
                 Console.WriteLine("Email:-" + table.Field<string>("Email"));
             }
         }
+
+
+	 public void editContact(Contact contact)
+         {
+            var recordData= dataTable.AsEnumerable().Where(data => data.Field<string>("FirstName") == contact.FirstName).First();
+            if (recordData != null)
+            {
+                recordData.SetField("LastName", contact.LastName);
+                recordData.SetField("Address", contact.Address);
+                recordData.SetField("City", contact.City);
+                recordData.SetField("State", contact.State);
+                recordData.SetField("ZipCode", contact.ZipCode);
+                recordData.SetField("PhoneNumber", contact.PhoneNumber);
+                recordData.SetField("Email", contact.Email);
+            }
+        }
+
     }
+
 }
