@@ -74,8 +74,11 @@ namespace AddressBookWithLinq
                             contact.City = Console.ReadLine();
                             addressBook.retrievePersonByUsingCity(contact);
                             break;
-                        case 7:
-                            Environment.Exit(0);
+ 			case 7:
+                            addressBook.countByCityAndState();
+                            break;
+                        case 8: 
+			   Environment.Exit(0);
                             break;
                         default:
                             Console.WriteLine("Enter The Valid Choise");
